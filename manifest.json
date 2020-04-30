@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Touch Where Its Warm",
+  "permissions": [
+          "storage"
+          // "webRequest",
+           // "webRequestBlocking"],
+         ],
+
+   "version": "0.1",
+   // "css": "style.css",
+
+  //  "background": {
+  //   "scripts": ["background.js"],
+  //   "persistent": true
+  // },
+
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    // "exclude_matches": ["https://elenaleegold.github.io/ritual-site/"],
+    "js": [ "p5.js", "p5.dom.js","jquery-3.2.1.min.js", "warm_touch.js"]
+  },
+{
+  "matches": ["https://elenaleegold.github.io/ritual-site/afterCare.html"],
+   "js": ["p5.js", "p5.dom.js", "jquery-3.2.1.min.js"]
+
+}
+
+]
+}
