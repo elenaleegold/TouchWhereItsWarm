@@ -11,52 +11,54 @@ function preload() {
 }
 
 function setup() {
-        canvas = createDiv();
-        cH = window.innerHeight;
-        cW = window.innerWidth;
-        var body = select('body');
-        body.style('pointer-events', 'none');
-        canvas.id('sketch-holder');
-        canvas.parent(select('body'));
-        var myCanvas = createCanvas(cW, cH);
-        canvas.style('position', 'fixed');
-        canvas.style('z-index', '1000');
-        canvas.style('top', '0');
-        myCanvas.parent(canvas);
-        background(0);
-        fSize = 15;
-        dir = -1;
-        imageMode(CENTER);
+    canvas = createDiv();
+    cH = window.innerHeight;
+    cW = window.innerWidth;
+    var body = select('body');
+    body.style('pointer-events', 'none');
+    canvas.id('sketch-holder');
+    canvas.parent(select('body'));
+    var myCanvas = createCanvas(cW, cH);
+    canvas.style('position', 'fixed');
+    canvas.style('z-index', '1000');
+    canvas.style('top', '0');
+    myCanvas.parent(canvas);
+    background(0);
+    fSize = 15;
+    dir = -1;
+    imageMode(CENTER);
 }
 
 
 function draw() {
     // if (toggle) {
-        console.log("touch!");
-        textFont('Courier');
-        textSize(fSize);
-        fill(0, 255);
-        let message = "Touch your computer. Linger on the spots that feel the warmest.";
-        let tSize = textWidth(message);
-        rect(30, cH - (cH / 6), tSize - tSize / 3, 60);
-        fill(255, 255);
-        text("Touch your computer.\nLinger on the spots that feel the warmest.", 30, cH - (cH / 7));
-        fill(255, 93, 95, 1);
-        noStroke();
-        tint(255, 3);
+    console.log("touch!");
+    textFont('Courier');
+    textSize(fSize);
+    fill(0, 255);
+    let message = "Touch your computer. Linger on the spots that feel the warmest.";
+    let tSize = textWidth(message);
+    rect(30, cH - (cH / 6), tSize - tSize / 3, 60);
+    fill(255, 255);
+    text("Touch your computer.\nLinger on the spots that feel the warmest.", 30, cH - (cH / 7));
+    fill(255, 93, 95, 1);
+    noStroke();
+    tint(255, 3);
+    if (mouseIsPressed) {
         image(brush, mouseX, mouseY);
-        // ellipse(mouseX, mouseY, 100);
-        if (fSize > 20 || fSize < 15) {
-            dir *= -1;
-        }
-        fSize += (dir * 0.005);
+    }
+    // ellipse(mouseX, mouseY, 100);
+    if (fSize > 20 || fSize < 15) {
+        dir *= -1;
+    }
+    fSize += (dir * 0.005);
 
-        setTimeout(function() {
-            console.log("its off");
-            toggle = false;
-            clear();
-            return;
-        }, 30000);
+    setTimeout(function() {
+        console.log("its off");
+        toggle = false;
+        clear();
+        return;
+    }, 30000);
 
     // } else if (toggle == false || toggle == undefined) {
     //     setTimeout(function() {
