@@ -23,7 +23,7 @@ function setup() {
         canvas.style('z-index', '1000');
         canvas.style('top', '0');
         myCanvas.parent(canvas);
-        // background(0);
+        background(0);
         fSize = 15;
         dir = -1;
         imageMode(CENTER);
